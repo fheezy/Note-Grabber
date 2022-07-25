@@ -1,7 +1,7 @@
 // dependencies
 const express = require("express");
 const router = express.Router();
-// creates a random id
+// generates a random id
 const uuid = require("uuid");
 // brings in the DB class object
 const DB = require("../db/db");
@@ -26,11 +26,11 @@ router.post("/api/notes", async function (req, res) {
   return res.send(newNote);
 });
 
-// // route to delete notes
+  // delete notes
 router.delete("/api/notes/:id", async function (req, res) {
-  // separates out the note to delete based on id
+  // separates the note based on id to get deleted
   const noteToDelete = req.params.id;
-  // notes already in json file
+  // notes in json file
   const currentNotes = await DB.readNotes();
   // sort through notes file and create a new array minus the note in question
   const newNoteData = currentNotes.filter((note) => note.id !== noteToDelete);

@@ -1,10 +1,10 @@
-//require dependencies
+//require as a dependencies
 const express = require('express');
 
-//create express app
+//generates express app
 const app = express();
 
-//create a PORT variable
+//generates a PORT variable
 const PORT = process.env.PORT || 3000;
 
 //set up express to handle data parsing
@@ -17,5 +17,5 @@ app.use(apiRoutes);
 const htmlRoutes = require("./routes/htmlRoutes");
 app.use(htmlRoutes);
 
-//create server listener
+//generates a server listener
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
