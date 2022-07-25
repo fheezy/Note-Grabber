@@ -7,7 +7,7 @@ const $noteList = $(".list-container .list-group");
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
-// A function for getting all notes from the db
+// Getting all notes from the db
 const getNotes = () => {
   return $.ajax({
     url: "/api/notes",
@@ -15,7 +15,7 @@ const getNotes = () => {
   });
 };
 
-// A function for saving a note to the db
+// Saving a note to the db
 const saveNote = (note) => {
   return $.ajax({
     url: "/api/notes",
